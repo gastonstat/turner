@@ -1,0 +1,135 @@
+\documentclass{article}
+\usepackage{upquote}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setlength{\parindent}{0in}
+
+% \VignetteIndexEntry{Introduction to turnlist}
+% \VignetteEngine{knitr}
+
+\begin{document}
+\title{Introduction to \texttt{turnlist}}
+\author{
+ Gaston Sanchez
+}
+\date{}
+\maketitle
+
+
+\section{Introduction and Motivation}
+\texttt{turnlist} is an R package designed to provide a set of handy functions for manipulating lists of vectors. The main idea is to make it easier to turn lists into other data R structures. \texttt{turnlist} was born out of necessity from my involvement with \textbf{Multiblock Methods} and other multivariate data analysis methods (eg PLS Path Modeling). 
+
+\vspace{2mm}
+R is great for working with data in tabular format such as matrices and data frames. However, there's no data structure for representing the abstract concept of a \textit{multiblock}. Basically, a multiblock could be seen as a matrix divided by blocks. This is a very informal and simplistic description, but it helps to understand the notion of a multiblock.
+
+\vspace{2mm}
+So how can we work with multiblocks in R? The trivial solution is to work with several matrices (one matrix per block). Another solution is to work with arrays. A third solution is to work with lists of matrices. Obviously, all these options have its pros and cons.
+
+\vspace{2mm}
+A different approach ---the one I use--- is to work parallelly with one matrix (or a data frame) and one list. In this case, all the blocks are in a single matrix (or data frame), while the list contains the information about the blocks. The main advantage of this approach is that you keep the data in one single object. And the relevant information about the structure of the blocks is kept one list.
+
+\vspace{2mm}
+If we decide to work with the matrix-list duet, we need to be able to \textit{extract} the information of the list, and \textbf{turn} it into indixed structures (or other objects) for manipulating the blocks in the data matrix. \texttt{turnlist} is my attempt to make it easier (at least for me) perform such manipulations.
+
+
+
+\section{Some Examples}
+To use \texttt{turnlist} (once you have installed it), simply load it with the function \texttt{library()}:
+<<load_turnlist>>=
+# load package turnlist
+library(turnlist)
+@
+
+
+\subsection*{Data in Blocks}
+To see how we can apply \texttt{turnlist}, we need to consider some data under a multiblock perspective. First let's start by creating a data matrix with 10 observations and 9 variables.
+<<data_matrix>>=
+# create a matrix
+set.seed = 21
+some_data = round(matrix(rnorm(90), 10, 9), 3)
+rownames(some_data) = 1:10
+colnames(some_data) = paste("X", 1:9, sep='')
+
+# take a peek
+head(some_data, n=5)
+@
+
+Now, let's suppose that our data can be divided in 3 blocks. The first block is formed by variables \texttt{X1, X2, X3}. The second block is formed by variables \texttt{X4, X5}. And the third block is formed by variables \texttt{X6, X7, X8, X9}. All this information can be stored in a list:
+<<blocks>>=
+# list of blocks
+blocks = list(B1 = 1:3, B2 = 4:5, B3 = 6:9)
+@
+
+
+\subsection*{Indexed Structures}
+\texttt{turnlist} has been designed to work with lists (preferable of vectors) in order to turn them into \textit{indexed structures}. Such structures are mainly vectors that map the position indices of the elements in the list.
+
+\subsubsection*{\texttt{indexify()}}
+One common tasks is to \textbf{indexify} the list of blocks. The idea is to get a vector of indices representing the memberships of the variables to their corresponding block. This is better understood with the following example:
+<<indexify>>=
+# get indices of blocks
+indices = indexify(blocks)
+indices
+@
+
+The \textit{indexification} of \texttt{blocks} allows us to get an indexed vector \texttt{indices}. This vector contains as many elements as variables in \texttt{some\_data}. Moreover, it tells us that: the first three elements belong to one block, the fourth and fifth elements belong to block 2, and the rest of the elements belong to block 3.
+
+
+\subsubsection*{\texttt{list\_to\_dummy()}}
+Another interesting task, is to produce a dummy matrix based on the blocks. This is done by using the funciton \texttt{list\_to\_dummy()}:
+<<list_to_dummy>>=
+# get dummy matrix based on blocks
+dummy = list_to_dummy(blocks)
+dummy
+@
+
+As you can tell, \texttt{dummy} is matrix with as many rows as elements in blocks, and with as many columns as number of blocks. In turn, the columns of \texttt{dummy} are dummy indicators (hence the name).
+
+
+\subsubsection*{\texttt{from\_to()}}
+Sometimes, it is also useful to know the starting and ending positions of the blocks. This can be done by using the funciton \texttt{from\_to()}:
+<<from_to>>=
+# get starting and ending positions
+start_end = from_to(blocks)
+start_end
+
+# vectors from and to
+from = start_end$from
+to = start_end$to
+@
+
+We can extract the first block in \texttt{some\_data}:
+<<extract_first_block>>=
+# extract first block
+some_data[,from[1]:to[1]]
+@
+
+Obviously we can argue that there is no need to use \texttt{from} and \texttt{to}. We can extract the first block by just typing:
+<<get_first_block>>=
+# get first block
+some_data[,blocks[[1]]]
+@
+
+Yes, we can use \texttt{blocks} to manipulate the data. But the advantage of \texttt{from\_to()} comes when you work with string lists:
+<<str_list>>=
+str_list = list(c("a","b","c"), c("d", "e"), c("f","g","h","i"))
+@
+In this case you cannot extract the first blocks by typing:
+<<failed_extraction, eval=FALSE>>=
+# failed attempt
+some_data[,str_list[[1]]]
+@
+
+You solve this by:
+<<success_extraction>>=
+# start-end position for 'str_list'
+fromto_aux = from_to(str_list)
+from1 = fromto_aux$from
+to1 = fromto_aux$to
+
+# successful attempt
+some_data[,from1[1]:to1[1]]
+@
+
+
+\end{document}

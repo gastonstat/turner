@@ -1,0 +1,25 @@
+Package: turnlist
+Title: Functions for turning lists into indexed structures,
+    and other manipulations on lists
+Version: 0.1.1
+Date: 2013-05-20
+Author: Gaston Sanchez
+Maintainer: Gaston Sanchez <gaston.stat@gmail.com>
+Description: Package designed for working with lists of vectors,
+    mainly for turning them into other indexed data structures.
+URL: http://www.gastonsanchez.com/turnlist
+Depends:
+    R (>= 3.0)
+VignetteBuilder: knitr
+License: MIT
+Collate:
+    'df_to_blocks.r'
+    'dummy_to_list.r'
+    'from_to.r'
+    'funlist.r'
+    'indexify.r'
+    'lengths.r'
+    'list_to_dummy.r'
+    'listify.r'
+    'listsize.r'
+    'matrix_to_blocks.r'
