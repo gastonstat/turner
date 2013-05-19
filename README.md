@@ -28,7 +28,7 @@ install_github('turnlist', username='gastonstat')
 
 R is great for working with data in tabular format such as data frames and matrices. However, there's no data structure for representing the abstract concept of a *multiblock*. The trivial solution is to work with several matrices (one matrix per block). Another solution is to work with arrays. A third solution is to work with lists of matrices. Obviously, all these options have its pros and cons.
 
-A different approach `&mdash;`the one I use`&mdash;` is to work parallelly with one matrix (or a data frame) and one list. In this case, all the blocks are in a single matrix (or data frame), while the list contains the information about the blocks within the matrix (or data frame). The main advantage of this approach is that you keep the data in one single object. And the relevant information of the blocks' structure is in one list.
+A different approach --the one I use-- is to work parallelly with one matrix (or a data frame) and one list. In this case, all the blocks are in a single matrix (or data frame), while the list contains the information about the blocks within the matrix (or data frame). The main advantage of this approach is that you keep the data in one single object. And the relevant information of the blocks' structure is in one list.
 
 Now, the problem is that you need to be able to *extract* the information of the list, and **turn** it into indices (or other objects) for manipulating the blocks in your data. `turnlist` is my attempt to make it easier (at least for me) such manipulation.
 
