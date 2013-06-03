@@ -4,11 +4,11 @@
 \geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
 \setlength{\parindent}{0in}
 
-% \VignetteIndexEntry{Introduction to turnlist}
+% \VignetteIndexEntry{Introduction to turner}
 % \VignetteEngine{knitr}
 
 \begin{document}
-\title{Introduction to \texttt{turnlist}}
+\title{Introduction to \texttt{turner}}
 \author{
  Gaston Sanchez
 }
@@ -17,7 +17,7 @@
 
 
 \section{Introduction and Motivation}
-\texttt{turnlist} is an R package designed to provide a set of handy functions for manipulating lists of vectors. The main idea is to make it easier to turn lists into other data R structures. \texttt{turnlist} was born out of necessity from my involvement with \textbf{Multiblock Methods} and other multivariate data analysis methods (eg PLS Path Modeling). 
+\texttt{turner} is an R package designed to provide a set of handy functions for manipulating vectors and lists of vectors. The main idea is to make it easier to \textbf{turn} vectors (and lists of vectors) into other data R structures. \texttt{turnlist} was born out of necessity from my involvement with \textbf{Multiblock Methods} and other multivariate data analysis methods (eg PLS Path Modeling). 
 
 \vspace{2mm}
 R is great for working with data in tabular format such as matrices and data frames. However, there's no data structure for representing the abstract concept of a \textit{multiblock}. Basically, a multiblock could be seen as a matrix divided by blocks. This is a very informal and simplistic description, but it helps to understand the notion of a multiblock.
@@ -29,20 +29,20 @@ So how can we work with multiblocks in R? The trivial solution is to work with s
 A different approach ---the one I use--- is to work parallelly with one matrix (or a data frame) and one list. In this case, all the blocks are in a single matrix (or data frame), while the list contains the information about the blocks. The main advantage of this approach is that you keep the data in one single object. And the relevant information about the structure of the blocks is kept one list.
 
 \vspace{2mm}
-If we decide to work with the matrix-list duet, we need to be able to \textit{extract} the information of the list, and \textbf{turn} it into indixed structures (or other objects) for manipulating the blocks in the data matrix. \texttt{turnlist} is my attempt to make it easier (at least for me) perform such manipulations.
+If we decide to work with the matrix-list duet, we need to be able to \textit{extract} the information of the list, and \textbf{turn} it into indixed structures (or other objects) for manipulating the blocks in the data matrix. \texttt{turner} is my attempt to make it easier (at least for me) perform such manipulations.
 
 
 
 \section{Some Examples}
-To use \texttt{turnlist} (once you have installed it), simply load it with the function \texttt{library()}:
-<<load_turnlist>>=
-# load package turnlist
-library(turnlist)
+To use \texttt{turner} (once you have installed it), simply load it with the function \texttt{library()}:
+<<load_turner>>=
+# load package turner
+library(turner)
 @
 
 
 \subsection*{Data in Blocks}
-To see how we can apply \texttt{turnlist}, we need to consider some data under a multiblock perspective. First let's start by creating a data matrix with 10 observations and 9 variables.
+To see how we can apply \texttt{turner}, we need to consider some data under a multiblock perspective. First let's start by creating a data matrix with 10 observations and 9 variables.
 <<data_matrix>>=
 # create a matrix
 set.seed = 21
@@ -62,7 +62,7 @@ blocks = list(B1 = 1:3, B2 = 4:5, B3 = 6:9)
 
 
 \subsection*{Indexed Structures}
-\texttt{turnlist} has been designed to work with lists (preferable of vectors) in order to turn them into \textit{indexed structures}. Such structures are mainly vectors that map the position indices of the elements in the list.
+\texttt{turner} has been designed to work with lists (preferable of vectors) in order to turn them into \textit{indexed structures}. Such structures are mainly vectors that map the position indices of the elements in the list.
 
 \subsubsection*{\texttt{indexify()}}
 One common tasks is to \textbf{indexify} the list of blocks. The idea is to get a vector of indices representing the memberships of the variables to their corresponding block. This is better understood with the following example:

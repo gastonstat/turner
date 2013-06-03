@@ -1,13 +1,13 @@
-Package: turnlist
-Title: Functions for turning lists into indexed structures,
-    and other manipulations on lists
-Version: 0.1.1
-Date: 2013-05-20
+Package: turner
+Title: Functions for turning vectors and lists ot vectors into
+    indexed structures, and other manipulations on lists
+Version: 0.1.0
+Date: 2013-06-03
 Author: Gaston Sanchez
 Maintainer: Gaston Sanchez <gaston.stat@gmail.com>
-Description: Package designed for working with lists of vectors,
+Description: Package designed for working with vectors and lists of vectors,
     mainly for turning them into other indexed data structures.
-URL: http://www.gastonsanchez.com/turnlist
+URL: http://www.gastonsanchez.com/turner
 Depends:
     R (>= 3.0)
 VignetteBuilder: knitr
@@ -23,3 +23,5 @@ Collate:
     'listify.r'
     'listsize.r'
     'matrix_to_blocks.r'
+    'factor_to_dummy.r'
+    'vector_to_dummy.r'

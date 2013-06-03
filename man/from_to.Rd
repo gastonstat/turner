@@ -1,11 +1,14 @@
 \name{from_to}
 \alias{from_to}
-\title{Start and ending positions of the elements in a list}
+\title{Get the starting position 'from' and the ending position 'to' of the
+elements contained in a vector (or a list of vectors)}
 \usage{
-  from_to(alist)
+  from_to(x, ...)
 }
 \arguments{
-  \item{alist}{a list (preferably of vectors)}
+  \item{x}{a numeric vector or a list of vectors}
+
+  \item{...}{further arguments are ignored}
 }
 \value{
   A list with two vectors: '$from' and '$to'. '$from'
@@ -14,25 +17,25 @@
 }
 \description{
   Get the starting position 'from' and the ending position
-  'to' of the elements contained in a list
+  'to' of the elements contained in a vector (or a list of
+  vectors)
 }
 \examples{
-# let's say you have a list like this
+# let's say you have a numeric vector like this
+num_vec = c(2, 3, 1, 4)
+
+# get 'from' and 'to' indices
+start_end = from_to(num_vec)
+from = start_end$from
+to = start_end$to
+
+#' let's say you have a list like this
 str_list = list(c("a","b","c"), c("d", "e"), c("f","g","h"))
 
 # get 'from' and 'to' indices
 start_end = from_to(str_list)
 from = start_end$from
 to = start_end$to
-
-# now let's convert str_list into a vector
-str_vec = unlist(str_list)
-
-# recover first set of letters on the string vector
-str_vec[from[1]:to[1]]
-
-# recover third set of letters on the string vector
-str_vec[from[3]:to[3]]
 }
 \author{
   Gaston Sanchez
