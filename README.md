@@ -19,7 +19,7 @@ install.packages("devtools")
 # load devtools
 library(devtools)
 
-# install 'turnlist'
+# install 'turner'
 install_github('turner', username='gastonstat')
 ```
 
