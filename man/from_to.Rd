@@ -1,9 +1,6 @@
 \name{from_to}
 \alias{from_to}
-\title{Starting and ending positions
-
-Get the starting position 'from' and the ending position 'to' of the
-elements contained in a vector (or a list of vectors)}
+\title{Starting and ending positions}
 \usage{
   from_to(x, ...)
 }
@@ -18,8 +15,6 @@ elements contained in a vector (or a list of vectors)}
   contains the indices with ending positions.
 }
 \description{
-  Starting and ending positions
-
   Get the starting position 'from' and the ending position
   'to' of the elements contained in a vector (or a list of
   vectors)
