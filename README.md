@@ -1,20 +1,20 @@
-turnlist
+turner
 =============================
 
-The R package `turnlist` has been designed for working with lists of vectors. It provides a set of handy functions to turn lists into other indexed data structures. It also provides tools for applying a function on the unlisted elements of a list.
+The R package `turner` has been designed for working with lists of vectors. It provides a set of handy functions to turn vectors (and lists of vectors) into other indexed data structures. It also provides tools for applying a function on the unlisted elements of a list.
 
 ## Installation
 
 You will soon be able to install a stable version on [CRAN](http://cran.r-project.org/package=turner)
 ```r
 # (not in CRAN yet)
-install.packages('turnlist')
+install.packages('turner')
 ```
 
 Right now the only available version that you can install is the development version on [github](https://github.com/gastonstat/turner) using the R package **devtools**:
 ```
 # if you haven't installed 'devtools'
-install.devtools("devtools")
+install.packages("devtools")
 
 # load devtools
 library(devtools)
