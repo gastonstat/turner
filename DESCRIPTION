@@ -1,8 +1,7 @@
 Package: turner
-Title: Functions for turning vectors and lists ot vectors into
-    indexed structures, and other manipulations on lists
-Version: 0.1.0
-Date: 2013-06-03
+Title: Turn vectors and lists ot vectors into indexed structures
+Version: 0.1.1
+Date: 2013-06-05
 Author: Gaston Sanchez
 Maintainer: Gaston Sanchez <gaston.stat@gmail.com>
 Description: Package designed for working with vectors and lists of vectors,
