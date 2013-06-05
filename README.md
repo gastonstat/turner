@@ -1,7 +1,7 @@
 turner
 =============================
 
-The R package `turner` has been designed for working with lists of vectors. It provides a set of handy functions to turn vectors (and lists of vectors) into other indexed data structures. It also provides tools for applying a function on the unlisted elements of a list.
+The R package `turner` has been designed for working with vectors and lists of vectors. It provides a set of handy functions to turn vectors (and lists of vectors) into other indexed data structures. It also provides tools for applying a function on the unlisted elements of a list.
 
 ## Installation
 
