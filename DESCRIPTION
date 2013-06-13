@@ -1,7 +1,7 @@
 Package: turner
 Title: Turn vectors and lists ot vectors into indexed structures
-Version: 0.1.1
-Date: 2013-06-05
+Version: 0.1.2
+Date: 2013-06-13
 Author: Gaston Sanchez
 Maintainer: Gaston Sanchez <gaston.stat@gmail.com>
 Description: Package designed for working with vectors and lists of vectors,
@@ -18,7 +18,9 @@ Collate:
     'funlist.r'
     'indexify.r'
     'lengths.r'
+    'list_ones.r'
     'list_to_dummy.r'
+    'list_to_matrix.r'
     'listify.r'
     'listsize.r'
     'matrix_to_blocks.r'
