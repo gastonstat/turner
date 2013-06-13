@@ -13,7 +13,7 @@
 #' # let's say you have a list like this
 #' num_list = list(1:3, 4:5, 6:9)
 #' 
-#' # get dummy matrix
+#' # get design-type matrix
 #' list_to_matrix(num_list)
 list_to_matrix <- function(alist)
 {
