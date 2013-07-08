@@ -4,11 +4,12 @@
 #' Split a matrix into a list of blocks (either by rows or by columns)
 #'
 #' @param Matrix a matrix to split
-#' @param blocks either a list or a vector indicating the blocks. If \code{blocks}
-#' is a list of vectors, then the length of each vector defines the size of the blocks.
-#' If \code{blocks} is a vector, then each element represents the size of the blocks.
-#' @param byrow logical. If \code{TRUE} (the default) the matrix is split by rows,
-#' otherwise the matrix is split by columns
+#' @param blocks either a list or a vector indicating the blocks. 
+#' If \code{blocks} is a list of vectors, then the length of each vector 
+#' defines the size of the blocks. If \code{blocks} is a vector, then each 
+#' element represents the size of the blocks.
+#' @param byrow logical. If \code{TRUE} (the default) the matrix is split 
+#' by rows, otherwise the matrix is split by columns
 #' @return A list of matrices
 #' @author Gaston Sanchez
 #' @seealso \code{\link{lengths}}, \code{\link{listsize}}

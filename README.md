@@ -1,27 +1,6 @@
-turner
-=============================
+# turner
 
 The R package `turner` has been designed for working with vectors and lists of vectors. It provides a set of handy functions to turn vectors (and lists of vectors) into other indexed data structures. It also provides tools for applying a function on the unlisted elements of a list.
-
-## Installation
-
-You will soon be able to install a stable version on [CRAN](http://cran.r-project.org/package=turner)
-```r
-# (not in CRAN yet)
-install.packages('turner')
-```
-
-Right now the only available version that you can install is the development version on [github](https://github.com/gastonstat/turner) using the R package **devtools**:
-```
-# if you haven't installed 'devtools'
-install.packages("devtools")
-
-# load devtools
-library(devtools)
-
-# install 'turner'
-install_github('turner', username='gastonstat')
-```
 
 ## Motivation
 
@@ -29,12 +8,31 @@ install_github('turner', username='gastonstat')
 
 R is great for working with data in tabular format such as data frames and matrices. However, there's no data structure for representing the abstract concept of a *multiblock*. The trivial solution is to work with several matrices (one matrix per block). Another solution is to work with arrays. A third solution is to work with lists of matrices. Obviously, all these options have its pros and cons.
 
-A different approach --the one I use-- is to work parallelly with one matrix (or a data frame) and one list. In this case, all the blocks are in a single matrix (or data frame), while the list contains the information about the blocks within the matrix (or data frame). The main advantage of this approach is that you keep the data in one single object. And the relevant information of the blocks' structure is in one list.
+A different approach (the one I use) is to work parallelly with one matrix (or a data frame) and one list. In this case, all the blocks are in a single matrix (or data frame), while the list contains the information about the blocks within the matrix (or data frame). The main advantage of this approach is that you keep the data in one single object. And the relevant information of the blocks' structure is in one list.
 
 Now, the problem is that you need to be able to *extract* the information of the list, and **turn** it into indices (or other objects) for manipulating the blocks in your data. `turner` is my attempt to make it easier (at least for me) such manipulation.
 
-## Some Examples
+
+## Installation
+
+You will soon be able to install a stable version from [CRAN](http://cran.r-project.org/package=turner)
+```ruby
+# (not in CRAN yet)
+install.packages('turner')
 ```
+
+Right now the only available version that you can install is the development version on [github](https://github.com/gastonstat/turner):
+```ruby
+# load devtools
+library(devtools)
+
+# install 'turner'
+install_github('turner', username='gastonstat')
+```
+
+
+## Some Examples
+```ruby
 library(turner)
 
 # create a list

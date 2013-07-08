@@ -17,8 +17,8 @@
 #' vector_to_dummy(num_vec)
 vector_to_dummy <- function(avector)
 {
-  if (!is.vector(avector) && !is.numeric(avector))
-    stop("\nA numeric vector is required")
+  if (!is_numeric_vector(avector))
+    stop("\n'vector_to_dummy()' requires a numeric vector")
   
   num_rows = sum(avector)
   num_cols = length(avector)

@@ -17,10 +17,8 @@
 #' listify(number_elements)
 listify <- function(indices)
 {
-  if (!is.vector(indices))
-    stop("\nA vector is required")
-  if (!is.numeric(indices))
-    stop("\nA numeric (integer) vector is required")
+  if (!all(is_positive_integer(indices)))
+    stop("\n'listify()' requires a vector of positive integers")
   
   mapply(rep, seq_along(indices), indices) 
 }

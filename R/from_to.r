@@ -36,7 +36,7 @@ from_to <- function(x, ...) {
 #' @S3method from_to numeric
 from_to.numeric <- function(x, ...)
 {
-  if (!is.vector(x) || !is.numeric(x))
+  if (!is_numeric_vector(x))
     stop("\nA numeric vector is required")
   
   to = cumsum(x)

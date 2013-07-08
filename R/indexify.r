@@ -33,7 +33,7 @@ indexify <- function(x, out) {
 #' @S3method indexify numeric
 indexify.numeric <- function(x, out = "vector")
 {
-  if (!is.vector(x) || !is.numeric(x))
+  if (!is_numeric_vector(x))
     stop("\nA numeric vector is required")
   
   if (out == "vector")

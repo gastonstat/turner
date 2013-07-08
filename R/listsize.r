@@ -17,7 +17,7 @@
 listsize <- sizelist <- function(alist)
 {
   if (!is.list(alist))
-    stop("\nA list is required")
+    stop("\n'listsize()' requires a list")
   
   length(unlist(alist))
 }

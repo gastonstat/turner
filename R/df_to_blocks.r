@@ -4,11 +4,12 @@
 #' Split a data frame into a list of blocks (either by rows or by columns)
 #'
 #' @param DataFrame a data frame to split
-#' @param blocks either a list or a vector indicating the blocks. If \code{blocks}
-#' is a list of vectors, then the length of each vector defines the size of the blocks.
-#' If \code{blocks} is a vector, then each element represents the size of the blocks.
-#' @param byrow logical. If \code{TRUE} (the default) the data frame is split by rows,
-#' otherwise the data frame is split by columns
+#' @param blocks either a list or a vector indicating the blocks. If 
+#' \code{blocks} is a list of vectors, then the length of each vector defines 
+#' the size of the blocks. If \code{blocks} is a vector, then each element 
+#' represents the size of the blocks.
+#' @param byrow logical. If \code{TRUE} (the default) the data frame 
+#' is split by rows, otherwise the data frame is split by columns
 #' @return A list of data frames
 #' @author Gaston Sanchez
 #' @seealso \code{\link{matrix_to_blocks}}
@@ -29,7 +30,7 @@
 df_to_blocks <- function(DataFrame, blocks, byrow = TRUE)
 {
   if (!is.data.frame(DataFrame))
-    stop("\nA data frame is required")
+    stop("\n'df_to_blocks()' requires a data frame")
   if (!is.list(blocks) && !is.numeric(blocks))
     stop("\nA list is required")
   

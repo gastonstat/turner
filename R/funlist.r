@@ -59,9 +59,9 @@ funlist <- function(alist, f, ...)
 #' 
 #' # get the sum of all elements in list2 removing NAs
 #' sumlist(list2, na.rm=TRUE)
-sumlist <- function(alist, na.rm=FALSE)
+sumlist <- function(alist, na.rm = FALSE)
 {
-  funlist(alist, sum, na.rm=na.rm)
+  funlist(alist, sum, na.rm = na.rm)
 }
 
 
@@ -88,9 +88,9 @@ sumlist <- function(alist, na.rm=FALSE)
 #' 
 #' # get the prod of all elements in list2 removing NAs
 #' prodlist(list2, na.rm=TRUE)
-prodlist <- function(alist, na.rm=FALSE)
+prodlist <- function(alist, na.rm = FALSE)
 {
-  funlist(alist, prod, na.rm=na.rm)
+  funlist(alist, prod, na.rm = na.rm)
 }
 
 
@@ -117,9 +117,9 @@ prodlist <- function(alist, na.rm=FALSE)
 #' 
 #' # get the max of all elements in list2 removing NAs
 #' maxlist(list2, na.rm=TRUE)
-maxlist <- function(alist, na.rm=FALSE)
+maxlist <- function(alist, na.rm = FALSE)
 {
-  funlist(alist, max, na.rm=na.rm)
+  funlist(alist, max, na.rm = na.rm)
 }
 
 
