@@ -50,7 +50,7 @@ If we decide to work with the matrix-list duet, we need to be able to \textit{ex
 
 \section{Some Examples}
 To use \texttt{turner} (once you have installed it), simply load it with the function \texttt{library()}:
-<<load_turner>>=
+<<load_turner, message=FALSE>>=
 # load package turner
 library(turner)
 @
