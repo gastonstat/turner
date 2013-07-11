@@ -32,9 +32,12 @@
 
 
 \section{Introduction and Motivation}
-\texttt{turner} is an R package designed to provide a set of handy functions for manipulating vectors and lists of vectors. The main idea is to make it easier to \textbf{turn} vectors (and lists of vectors) into other data R structures. \texttt{turner} was born out of necessity from my involvement with \textbf{Multiblock Methods} and other multivariate data analysis methods (eg PLS Path Modeling). 
+\texttt{turner} is an R package designed to provide a set of handy functions for manipulating vectors and lists of vectors. The main idea is to make it easier to \textbf{turn} vectors (and lists of vectors) into other data R structures.
 
-\vspace{2mm}
+\paragraph{Why \texttt{turner}?} 
+The package \texttt{turner} was born out of necessity from my involvement with \textbf{Multiblock Methods} and other multivariate data analysis methods (eg PLS Path Modeling). Although \texttt{turner} is intended to be used as a low-level package (i.e. for developing other packages), I hope that you may find it useful for your own computations.
+
+\paragraph{A little bit of multiblocks}
 R is great for working with data in tabular format such as matrices and data frames. However, there's no data structure for representing the abstract concept of a \textit{multiblock}. Basically, a multiblock could be seen as a matrix divided by blocks. This is a very informal and simplistic description, but it helps to understand the notion of a multiblock.
 
 \vspace{2mm}

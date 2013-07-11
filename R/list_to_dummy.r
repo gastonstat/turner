@@ -4,7 +4,7 @@
 #' Create a dummy matrix based on the elements of a list. Each column in the
 #' produced matrix is a dummy indicator.
 #'
-#' @param alist a list (preferably of vectors)
+#' @param alist a list of vectors
 #' @return A matrix of dummy variables
 #' @author Gaston Sanchez
 #' @seealso \code{\link{dummy_to_list}}, \code{\link{listify}}
@@ -21,10 +21,10 @@
 #' list_to_dummy(str_list)
 list_to_dummy <- function(alist)
 {
-  if (!is.list(alist) && !is.vector(alist))
-    stop("\nA list is required")
+  if (!list_of_vectors(alist))
+    stop("\n'list_to_dummy()' requires a list of vectors")
   
-  aux = sapply(alist, length)
+  aux = lengths(alist)
   to = cumsum(aux)
   from = to - aux + 1
   dummy_matrix = matrix(0, sum(aux), length(aux))

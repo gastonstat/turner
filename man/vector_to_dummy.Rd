@@ -16,7 +16,7 @@
 }
 \examples{
 # let's say you have a list like this
-num_vec = c(2,3,1,4)
+num_vec = c(2, 3, 1, 4)
 
 # get dummy matrix
 vector_to_dummy(num_vec)

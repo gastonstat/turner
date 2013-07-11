@@ -33,11 +33,19 @@ from_to <- function(x, ...) {
 }
 
 
+#' @S3method from_to default
+from_to.default <- function(x, ...)
+{
+  if (!is_numeric_vector(x) || !list_of_vectors(x))
+    stop("\n'from_to()' requires a numeric vector or a list of vectors")
+}
+  
+
 #' @S3method from_to numeric
 from_to.numeric <- function(x, ...)
 {
   if (!is_numeric_vector(x))
-    stop("\nA numeric vector is required")
+    stop("\n'from_to()' requires a numeric vector")
   
   to = cumsum(x)
   from = to - x + 1
@@ -48,9 +56,8 @@ from_to.numeric <- function(x, ...)
 #' @S3method from_to list
 from_to.list <- function(x, ...)
 {
-  all_vectors = unlist(lapply(x, is.vector))
-  if (length(x) != sum(all_vectors))
-    stop("\nA list of vectors is required")
+  if (!list_of_vectors(x))
+    stop("\n'from_to()' requires a list of vectors")
   
   aux = unlist(lapply(x, length))
   to = cumsum(aux)

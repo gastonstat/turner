@@ -30,11 +30,19 @@ indexify <- function(x, out) {
 }
 
 
+#' @S3method indexify default
+indexify.default <- function(x, ...)
+{
+  if (!is_numeric_vector(x) || !list_of_vectors(x))
+    stop("\n'indexify()' requires a numeric vector or a list of vectors")
+}
+
+
 #' @S3method indexify numeric
 indexify.numeric <- function(x, out = "vector")
 {
   if (!is_numeric_vector(x))
-    stop("\nA numeric vector is required")
+    stop("\n'indexify()' requires a numeric vector")
   
   if (out == "vector")
     rep(seq_along(x), x)
@@ -45,9 +53,8 @@ indexify.numeric <- function(x, out = "vector")
 #' @S3method indexify list
 indexify.list <- function(x, out = "vector")
 {
-  all_vectors = unlist(lapply(x, is.vector))
-  if (length(x) != sum(all_vectors))
-    stop("\nA list of vectors is required")
+  if (!list_of_vectors(x))
+    stop("\n'indexify()' requires a list of vectors")
   
   aux = unlist(lapply(x, length))
   if (out == "vector")

@@ -5,7 +5,7 @@
   list_to_dummy(alist)
 }
 \arguments{
-  \item{alist}{a list (preferably of vectors)}
+  \item{alist}{a list of vectors}
 }
 \value{
   A matrix of dummy variables

@@ -29,10 +29,10 @@
 #' df_to_blocks(iris_df, col_blocks, byrow=FALSE)
 df_to_blocks <- function(DataFrame, blocks, byrow = TRUE)
 {
-  if (!is.data.frame(DataFrame))
+  if (is_not_dataframe(DataFrame))
     stop("\n'df_to_blocks()' requires a data frame")
   if (!is.list(blocks) && !is.numeric(blocks))
-    stop("\nA list is required")
+    stop("\n'df_to_blocks()' requires a list (or vector)")
   
   num_blocks = length(blocks)
   if (is.list(blocks)) {

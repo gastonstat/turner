@@ -3,7 +3,7 @@
 #' @description
 #' Create an indexed list from the columns of a dummy (or semi-dummy) matrix
 #'
-#' @param Dummy a dummy matrix (dummy by columns)
+#' @param Dummy matrix (dummy by columns)
 #' @return A list of indexed vectors
 #' @author Gaston Sanchez
 #' @seealso \code{\link{list_to_dummy}}, \code{\link{listify}}
@@ -24,8 +24,8 @@
 #' dummy_to_list(semi_dummy)
 dummy_to_list <- function(Dummy)
 {
-  if (!is.matrix(Dummy))
-    stop("\nA dummy matrix is required")
+  if (is_not_matrix(Dummy))
+    stop("\n'dummy_to_list()' requires a (dummy) matrix")
   
   indices = apply(Dummy, 2, function(x) sum(x != 0))
   listify(indices)

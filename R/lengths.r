@@ -25,12 +25,12 @@
 lengths <- function(alist, out = "vector")
 {
   if (!is.list(alist)) 
-    stop("\nA list is required")
+    stop("\n'lengths()' requires a list")
   
   bad_out <- !(out %in% c('vector', 'list'))
   if (bad_out) out = 'vector'
   
   if (out == "vector")
-    sapply(alist, length)
+    unlist(lapply(alist, length))
   else lapply(alist, length)
 }

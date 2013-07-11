@@ -17,6 +17,7 @@
 list_ones <- function(x)
 {
   if (!is_numeric_vector(x))
-    stop("\nA numeric vector is required")
+    stop("\n'list_ones()' requires a numeric vector")
+  # output
   lapply(x, function(u) rep(1, u))
 }

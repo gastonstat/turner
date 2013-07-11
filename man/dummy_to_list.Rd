@@ -5,7 +5,7 @@
   dummy_to_list(Dummy)
 }
 \arguments{
-  \item{Dummy}{a dummy matrix (dummy by columns)}
+  \item{Dummy}{matrix (dummy by columns)}
 }
 \value{
   A list of indexed vectors

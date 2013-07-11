@@ -31,10 +31,10 @@
 #' matrix_to_blocks(M, col_sets, byrow=FALSE)
 matrix_to_blocks <- function(Matrix, blocks, byrow = TRUE)
 {
-  if (!is.matrix(Matrix))
-    stop("\nA matrix is required")
+  if (is_not_matrix(Matrix))
+    stop("\n'matrix_to_blocks()' requires a matrix")
   if (!is.list(blocks) && !is.numeric(blocks))
-    stop("\nA list is required")
+    stop("\n'matrix_to_blocks()' requires a list (or vector)")
   
   num_blocks = length(blocks)
   if (is.list(blocks)) {

@@ -1,5 +1,7 @@
+S3method(from_to,default)
 S3method(from_to,list)
 S3method(from_to,numeric)
+S3method(indexify,default)
 S3method(indexify,list)
 S3method(indexify,numeric)
 export(df_to_blocks)

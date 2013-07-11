@@ -17,16 +17,10 @@
 #' list_to_matrix(num_list)
 list_to_matrix <- function(alist)
 {
-  if (!is.list(alist))
-    stop("\nA list is required")
-  are_vectors = unlist(lapply(alist, is.vector))
-  if (sum(are_vectors) != length(alist))
-    stop("\nAll elements in 'alist' must be numeric vectors")
-  are_numerics = unlist(lapply(alist, is.numeric))
-  if (sum(are_numerics) != length(alist))
-    stop("\nAll elements in 'alist' must be numeric vectors")
+  if (!list_of_numeric_vectors(alist))
+    stop("\n'list_to_matrix()' requires a list of numeric vectors")
   
-  aux = sapply(alist, length)
+  aux = lengths(alist)
   to = cumsum(aux)
   from = to - aux + 1
   linked_matrix = matrix(0, sum(aux), length(aux))

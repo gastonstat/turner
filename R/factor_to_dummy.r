@@ -18,7 +18,7 @@
 factor_to_dummy <- function(afactor)
 {
   if (!is.factor(afactor))
-    stop("\nA factor is required")
+    stop("\n'factor_to_dummy()' requires a factor")
  
   num_obs = length(afactor)
   categs = levels(afactor)
