@@ -1,6 +1,6 @@
-# turner
+# `"turner"`
 
-The R package `turner` has been designed for working with vectors and lists of vectors. It provides a set of handy functions to turn vectors (and lists of vectors) into other indexed data structures. It also provides tools for applying a function on the unlisted elements of a list.
+`turner` is an [R](http://www.r-project.org/) package has been designed for working with vectors and lists of vectors. It provides a set of handy functions to turn vectors (and lists of vectors) into other indexed data structures. It also provides tools for applying a function on the unlisted elements of a list.
 
 ## Motivation
 
@@ -61,8 +61,8 @@ list_to_dummy(some_list)
 indexify(some_list)
 ```
 
-Author Contact
---------------
+# Author Contact
+
 [www.gastonsanchez.com](http://www.gastonsanchez.com)
 
-Gaston Sanchez (gaston.stat at gmail.com)
+Gaston Sanchez (`gaston.stat at gmail.com`)
