@@ -21,7 +21,7 @@ You will soon be able to install a stable version from [CRAN](http://cran.r-proj
 install.packages('turner')
 ```
 
-Right now the only available version that you can install is the development version on [github](https://github.com/gastonstat/turner):
+Development version on [github](https://github.com/gastonstat/turner):
 ```ruby
 # load devtools
 library(devtools)
@@ -61,9 +61,8 @@ list_to_dummy(some_list)
 indexify(some_list)
 ```
 
-More info at [www.gastonsanchez.com/turner](http://www.gastonsanchez.com/turner)
-
-
 Author Contact
 --------------
+[www.gastonsanchez.com](http://www.gastonsanchez.com)
+
 Gaston Sanchez (gaston.stat at gmail.com)
