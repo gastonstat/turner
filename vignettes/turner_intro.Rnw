@@ -24,8 +24,8 @@
 \author{
  \textbf{\textcolor{darkgray}{G}}\textcolor{lightgray}{aston} 
  \textbf{\textcolor{darkgray}{S}}\textcolor{lightgray}{anchez} \\
-  \small \texttt{\href{http://www.gastonsanchez.com/turner}
-{www.gastonsanchez.com/turner}}
+  \small \texttt{\href{http://www.gastonsanchez.com}
+{www.gastonsanchez.com}}
 }
 \date{}
 \maketitle
@@ -35,7 +35,7 @@
 \texttt{turner} is an R package designed to provide a set of handy functions for manipulating vectors and lists of vectors. The main idea is to make it easier to \textbf{turn} vectors (and lists of vectors) into other data R structures.
 
 \paragraph{Why \texttt{turner}?} 
-The package \texttt{turner} was born out of necessity from my involvement with \textbf{Multiblock Methods} and other multivariate data analysis methods (eg PLS Path Modeling). Although \texttt{turner} is intended to be used as a low-level package (i.e. for developing other packages), I hope that you may find it useful for your own computations.
+The package \texttt{turner} was born out of necessity from my involvement with \textbf{Multiblock Methods} and other multivariate data analysis methods (eg PLS Path Modeling). Although \texttt{turner} is intended to be used as a lower-level package (i.e. for developing other packages), I hope that you may find it useful for your own computations.
 
 \paragraph{A little bit of multiblocks}
 R is great for working with data in tabular format such as matrices and data frames. However, there's no data structure for representing the abstract concept of a \textit{multiblock}. Basically, a multiblock could be seen as a matrix divided by blocks. This is a very informal and simplistic description, but it helps to understand the notion of a multiblock.
@@ -128,17 +128,19 @@ Obviously we can argue that there is no need to use \texttt{from} and \texttt{to
 some_data[,blocks[[1]]]
 @
 
-Yes, we can use \texttt{blocks} to manipulate the data. But the advantage of \texttt{from\_to()} comes when you work with string lists:
+Yes, we can use \texttt{blocks} to manipulate the data. But the advantage of \texttt{from\_to()} comes when you work with string lists like the following one:
 <<str_list>>=
+# string list
 str_list = list(c("a","b","c"), c("d", "e"), c("f","g","h","i"))
 @
-In this case you cannot extract the first blocks by typing:
+
+In this case you cannot extract the first block by typing:
 <<failed_extraction, eval=FALSE>>=
 # failed attempt
 some_data[,str_list[[1]]]
 @
 
-You solve this by:
+You solve this problem by using \texttt{from\_to()}:
 <<success_extraction>>=
 # start-end position for 'str_list'
 fromto_aux = from_to(str_list)
