@@ -33,6 +33,7 @@ install_github('turner', username='gastonstat')
 
 ## Some Examples
 ```ruby
+# load turner
 library(turner)
 
 # create a list
@@ -63,6 +64,6 @@ indexify(some_list)
 
 # Author Contact
 
-[www.gastonsanchez.com](http://www.gastonsanchez.com)
+Gaston Sanchez:  [www.gastonsanchez.com](http://www.gastonsanchez.com)
 
-Gaston Sanchez (`gaston.stat at gmail.com`)
+(`gaston.stat at gmail.com`)
