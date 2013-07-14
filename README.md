@@ -15,9 +15,9 @@ Now, the problem is that you need to be able to *extract* the information of the
 
 ## Installation
 
-You will soon be able to install a stable version from [CRAN](http://cran.r-project.org/package=turner)
+Stable version on [CRAN](http://cran.r-project.org/package=turner)
 ```ruby
-# (not in CRAN yet)
+# stable version
 install.packages('turner')
 ```
 
