@@ -6,10 +6,13 @@ Author: Gaston Sanchez
 Maintainer: Gaston Sanchez <gaston.stat@gmail.com>
 Description: Package designed for working with vectors and lists of vectors,
     mainly for turning them into other indexed data structures.
-URL: http://www.gastonsanchez.com/turner
+URL: http://www.gastonsanchez.com
 Depends:
     R (>= 3.0),
     tester
+Suggests:
+    testthat,
+    knitr
 VignetteBuilder: knitr
 License: GPL-3
 Collate:

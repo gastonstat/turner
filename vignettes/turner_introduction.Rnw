@@ -197,12 +197,42 @@ funlist(some_list, mean)
 
 
 \subsubsection*{listsize()}
-The function \texttt{listsize()} is another related function to work with lists and it allows us to get the total number of elements contained in a list:
+The function \texttt{listsize()} ---as well as \texttt{sizelist()}--- is another related function to work with lists. It allows us to get the total number of elements contained in a list:
 <<listsize>>=
 # number of elements in 'some_list'
 listsize(some_list)
 @
 
+
+\subsubsection*{indexify()}
+Another handy function is \texttt{listify()} which creates a list from a vector of integers:
+<<listify>>=
+# vector of indices
+number_elements = c(3, 1, 5)
+
+# list of index vectors based on 'number_elements'
+listify(number_elements)
+@
+
+
+
+\subsection{Other Functions}
+The following table shows other functions available in \texttt{turner}:
+\begin{center}
+ \begin{tabular}{l l}
+  \hline
+  Function & Description \\
+  \hline
+  \texttt{df\_to\_blocks()} & splits a data frame into blocks \\
+  \texttt{matrix\_to\_blocks()} & splits a matrix into blocks \\
+  \texttt{vector\_to\_dummy()} & creates a dummy matrix from the elements in a vector \\
+  \texttt{factor\_to\_dummy()} & creates a dummy matrix from the elements in a factor \\
+  \texttt{list\_to\_dummy()} & creates a dummy matrix from the elements in a list \\
+  \texttt{dummy\_to\_list()} & creates an indexed list from a dummy matrix \\
+  \texttt{list\_to\_matrix()} & creates a design-type matrix from the elements in a list \\
+  \hline
+ \end{tabular}
+\end{center}
 
 
 
