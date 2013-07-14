@@ -64,6 +64,6 @@ indexify(some_list)
 
 # Author Contact
 
-Gaston Sanchez:  [www.gastonsanchez.com](http://www.gastonsanchez.com)
+[www.gastonsanchez.com](http://www.gastonsanchez.com)
 
-(`gaston.stat at gmail.com`)
+Gaston Sanchez (`gaston.stat at gmail.com`)
