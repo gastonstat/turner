@@ -20,5 +20,5 @@ listify <- function(indices)
   if (!all(is_positive_integer(indices)))
     stop("\n'listify()' requires a vector of positive integers")
   
-  mapply(rep, seq_along(indices), indices) 
+  mapply(rep, seq_along(indices), indices, SIMPLIFY=FALSE) 
 }
