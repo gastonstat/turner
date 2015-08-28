@@ -1,15 +1,19 @@
 Package: turner
 Title: Turn vectors and lists of vectors into indexed structures
-Version: 0.1.7
-Date: 2014-02-17
+Version: 0.1.8
+Date: 2014-09-14
 Author: Gaston Sanchez
 Maintainer: Gaston Sanchez <gaston.stat@gmail.com>
 Description: Package designed for working with vectors and lists of vectors,
     mainly for turning them into other indexed data structures.
 URL: http://www.gastonsanchez.com
-Depends: R (>= 3.0)
-Imports: tester
-Suggests: testthat, knitr
+Depends:
+    R (>= 3.0)
+Imports:
+    tester
+Suggests:
+    testthat,
+    knitr
 VignetteBuilder: knitr
 License: GPL-3
 Collate:
@@ -27,4 +31,4 @@ Collate:
     'listsize.r'
     'matrix_to_blocks.r'
     'vector_to_dummy.r'
-    'turner-package.r'
+    'turner.r'
